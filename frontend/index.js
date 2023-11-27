@@ -71,8 +71,8 @@ async function sprintChallenge5() { // Note the async keyword, in case you wish 
                 const uList = document.createElement('ul')
                 const list = document.createElement('li')
                 list.textContent = mentorName
-                uList.appendChild(list)
                 mentorHeader.appendChild(uList)
+                div.appendChild(list)
               }
             });
           });
