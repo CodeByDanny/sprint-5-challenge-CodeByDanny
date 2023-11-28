@@ -74,7 +74,6 @@ async function sprintChallenge5() {
       cardDiv.addEventListener('click', () => {
         if (!cardDiv.classList.contains('selected')) {
           const allCards = document.querySelectorAll('.cards .card');
-          const intialValue = learner.nameHeader
           allCards.forEach(card => {
             card.classList.remove('selected');
           });
@@ -84,6 +83,8 @@ async function sprintChallenge5() {
         } else {
           cardDiv.classList.remove('selected');
           nameHeader.textContent = `${learner.fullName}`
+          headerPara.textContent = `No learner is selected`;
+
 
         }
       });
