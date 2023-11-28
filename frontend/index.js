@@ -25,6 +25,18 @@ async function sprintChallenge5() {
       let mentorSelector = document.createElement('h4');
       let idContainer = document.createElement('ul');
       let headerPara = document.querySelector('.info');
+      let newId = document.createElement('li');
+      for (let i = 0; i < learner.mentors.length; i++) {
+        const mentorId = learner.mentors[i];
+        const mentorData = reference.find(mentor => mentor.id === mentorId);
+        if (mentorData) {
+          const fullName = `${mentorData.firstName} ${mentorData.lastName}`;
+          const newId = document.createElement('li');
+          newId.textContent = fullName;
+          newId.style.display = 'none'; // Hide the mentor list item initially
+          idContainer.appendChild(newId);
+        }
+      }
 
       cardDiv.classList.add('card');
       nameHeader.textContent = `${learner.fullName}`;
@@ -37,6 +49,9 @@ async function sprintChallenge5() {
       cardDiv.appendChild(idContainer);
       cardsClass.appendChild(cardDiv);
       headerPara.textContent = 'No learner is selected';
+      
+
+
 
       mentorSelector.addEventListener('click', (event) => {
         event.stopPropagation();
@@ -55,7 +70,6 @@ async function sprintChallenge5() {
             const mentorData = reference.find(mentor => mentor.id === mentorId);
             if (mentorData) {
               const fullName = `${mentorData.firstName} ${mentorData.lastName}`;
-              let newId = document.createElement('li');
               newId.textContent = fullName;
               idContainer.appendChild(newId);
             }
