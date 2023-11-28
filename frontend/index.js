@@ -48,7 +48,7 @@ async function sprintChallenge5() {
           });
           cardDiv.classList.add('selected');
           nameHeader.textContent = `${learner.fullName}, ID ${learner.id}`;
-          headerPara.textContent = `Selected learner is ${learner.fullName}`;
+          headerPara.textContent = `The selected learner is ${learner.fullName}`;
 
           for (let i = 0; i < learner.mentors.length; i++) {
             const mentorId = learner.mentors[i];
@@ -74,6 +74,7 @@ async function sprintChallenge5() {
       cardDiv.addEventListener('click', () => {
         if (!cardDiv.classList.contains('selected')) {
           const allCards = document.querySelectorAll('.cards .card');
+          const intialValue = learner.nameHeader
           allCards.forEach(card => {
             card.classList.remove('selected');
           });
@@ -82,8 +83,8 @@ async function sprintChallenge5() {
           headerPara.textContent = `The selected learner is ${learner.fullName}`;
         } else {
           cardDiv.classList.remove('selected');
-          headerPara.textContent = `No learner is selected`;
-          nameHeader.textContent = `${learner.fullName}`;
+          nameHeader.textContent = `${learner.fullName}`
+
         }
       });
     });
@@ -91,6 +92,8 @@ async function sprintChallenge5() {
   } catch (err) {
     console.error(err);
   }
+
+
 }
 
 if (typeof module !== 'undefined' && module.exports) {
