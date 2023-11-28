@@ -82,7 +82,7 @@ async function sprintChallenge5() {
           headerPara.textContent = `The selected learner is ${learner.fullName}`;
         } else {
           cardDiv.classList.remove('selected');
-          headerPara.textContent = `No learner selected`;
+          headerPara.textContent = `No learner is selected`;
           nameHeader.textContent = `${learner.fullName}`;
         }
       });
